@@ -5,18 +5,20 @@ function getComputerChoice(){
 }
 const choices = ['Rock', 'Paper', 'Scissors']
 const against = ['Paper', 'Scissors', 'Rock']
-const lost = ['Scissors', 'rock', 'paper']
+const lost = ['Scissors', 'Rock', 'Paper']
 computerSelection = getComputerChoice
 function round(playerSelection ){
     computerSelection = getComputerChoice()
-    if (playerSelection == against[computerSelection-1]) {
+    cmpInd = computerSelection-1
+    console.log("cmpInd:"+cmpInd)
+    if (playerSelection == against[cmpInd]) {
         console.log("you won " )
         
-    } else if (playerSelection == lost[computerSelection-1]) {
+    } else if (playerSelection == lost[cmpInd]) {
         console.log("you lost")
-    } else if(playerSelection == choices[computerSelection-1]) {
+    } else if(playerSelection == choices[cmpInd]) {
         console.log("Continue..")
     } else { console.log("error")}
-    console.log("computerChoice: "+choices[computerSelection-1] )
+    console.log("computerChoice: "+choices[cmpInd] )
     console.log("playerChoice: "+playerSelection )
 }
