@@ -1,3 +1,5 @@
+let cmpScr = 0;
+let plrScr = 0;
 function getComputerChoice(){
     const choicesIndex = [1,2,3]
     // return choices[Math.floor(Math.random() * 3)]
@@ -11,14 +13,37 @@ function round(playerSelection ){
     computerSelection = getComputerChoice()
     cmpInd = computerSelection-1
     console.log("cmpInd:"+cmpInd)
-    if (playerSelection == against[cmpInd]) {
-        console.log("you won " )
-        
-    } else if (playerSelection == lost[cmpInd]) {
-        console.log("you lost")
-    } else if(playerSelection == choices[cmpInd]) {
-        console.log("Continue..")
-    } else { console.log("error")}
-    console.log("computerChoice: "+choices[cmpInd] )
-    console.log("playerChoice: "+playerSelection )
+        if (playerSelection == against[cmpInd]) {
+            console.log("you won " )
+            plrScr ++
+            
+        } else if (playerSelection == lost[cmpInd]) {
+            console.log("you lost")
+            cmpScr ++
+        } else if(playerSelection == choices[cmpInd]) {
+            console.log("Continue..")
+        } else { console.log("error")}
+        console.log("computerChoice: "+choices[cmpInd] )
+        console.log("playerChoice: "+playerSelection )
+    }
+
+
+function game(){
+    cmpScr = 0;
+    plrScr = 0;
+    for (let index = 0; index < 5; index++) {
+        playerSelection = prompt("Choose between rock, paper & Scissor !")
+        round(playerSelection)
+        if (cmpScr == 3) {
+            console.log("computer wins")
+        } else if (plrScr == 3) {
+            console.log("You Won!!")
+            
+        } 
+        // if (index = 4) {
+        //     console.log("It was a tie")
+
+        // }
+
+    }
 }
