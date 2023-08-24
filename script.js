@@ -1,3 +1,5 @@
+const reslutUI = document.querySelector(`.result`)
+console.log(reslutUI)
 let cmpScr = 0;
 let plrScr = 0;
 function getComputerChoice(){
@@ -16,12 +18,15 @@ function round(playerSelection ){
         if (playerSelection == against[cmpInd]) {
             console.log("you won " )
             plrScr ++
+            reslutUI.textContent = `You won`
             
         } else if (playerSelection == lost[cmpInd]) {
             console.log("you lost")
             cmpScr ++
+            reslutUI.textContent = `You lost`
         } else if(playerSelection == choices[cmpInd]) {
             console.log("Continue..")
+            reslutUI.textContent = `Continue`
         } else { console.log("error")}
         console.log("computerChoice: "+choices[cmpInd] )
         console.log("playerChoice: "+playerSelection )
